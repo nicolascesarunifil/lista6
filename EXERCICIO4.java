@@ -3,25 +3,28 @@ import java.util.Scanner;
 public class EXERCICIO4 {
     //Leia um vetor com 20 números inteiros. Escreva os elementos do vetor eliminando elementos
     //repetidos.
-
     public static void main(String[] args) {
-        int[] num = new int[10];
-        int[] aux = new int[10];
-        int cont = 0;
+
+        int[] num = new int[20];
+        int cont = 0, contRep=0;
         Scanner scanner = new Scanner(System.in);
-
+        do {
+            System.out.print("Escreva o " +(cont+1)+" numero: ");
+            num[cont] = scanner.nextInt();
+            cont= cont + 1;
+        }while (cont != 20);
+        System.out.print("Numeros nao repetidos -> ");
         for (int i = 0; i < num.length; i++) {
-            System.out.println("Digite o " + (i + 1) + "° numero: ");
-            num[i] = (scanner.nextInt());
-
-        for (int i = 0; i < num.length; i++) {
+            cont = 0;
             for (int j = 0; j < num.length; j++) {
-                if (int[i]==int[j]){
-                    cont= cont+1;
-                    aux[i] = cont;
+                if (num[i] == num[j]) {
+                    cont++;
                 }
             }
-
+            if (cont==1){
+                System.out.print(+num[i]+" ");
             }
+        }
     }
 }
+
